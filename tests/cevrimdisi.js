@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 
-test('Service Worker depo alt yolunda sayfayı ve tüm çevrimdışı varlıkları önbellekten sunar', async () => {
+test('Service Worker çevrimdışıyken depo alt yolundaki tüm varlıkları önbellekten sunar', async () => {
   const kok = 'https://example.test/sokratik-calisma-kocu/';
   const dinleyiciler = {};
   const varliklar = new Set();
@@ -16,7 +16,10 @@ test('Service Worker depo alt yolunda sayfayı ve tüm çevrimdışı varlıklar
       }
     },
     match: adres => varliklar.has(adres) ? adres : undefined,
+    put: async () => {},
   };
+  let cevrimici = false;
+  const agYaniti = { ok: true, clone() { return this; } };
   runInNewContext(readFileSync(new URL('../docs/sw.js', import.meta.url), 'utf8'), {
     URL,
     self: {
@@ -24,7 +27,11 @@ test('Service Worker depo alt yolunda sayfayı ve tüm çevrimdışı varlıklar
       addEventListener: (ad, islev) => { dinleyiciler[ad] = islev; },
     },
     caches: { open: async () => depo },
-    fetch: () => assert.fail('Önbellekteki dosya için ağ isteği yapıldı.'),
+    Response: { error: () => 'hata' },
+    fetch: async () => {
+      if (!cevrimici) throw new TypeError('Failed to fetch');
+      return agYaniti;
+    },
   });
   await new Promise(resolve => dinleyiciler.install({ waitUntil: resolve }));
 
@@ -39,6 +46,13 @@ test('Service Worker depo alt yolunda sayfayı ve tüm çevrimdışı varlıklar
     }));
     assert.equal(yanit, modu === 'navigate' ? kok : url);
   }
+  // Çevrimiçiyken güncel dosya ağdan gelir; eski önbellek kopyası güncellemeyi gizlemez.
+  cevrimici = true;
+  const guncel = await new Promise(resolve => dinleyiciler.fetch({
+    request: { method: 'GET', mode: 'same-origin', url: kok + 'app.js' },
+    respondWith: resolve,
+  }));
+  assert.equal(guncel, agYaniti);
   dinleyiciler.fetch({
     request: { method: 'GET', mode: 'navigate', url: 'https://claude.ai/new' },
     respondWith: () => assert.fail('Başka bir kaynağa yapılan gezinti yakalandı.'),

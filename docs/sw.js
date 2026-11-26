@@ -1,6 +1,6 @@
 const adres = new URL(self.registration.scope);
 const onEk = `sokratik-koc:${adres.pathname}:`;
-const onbellek = `${onEk}v1`;
+const onbellek = `${onEk}v2`;
 const varliklar = [
   './', './index.html', './style.css', './app.js',
   './lib/koc.js', './lib/sablonlar.js', './lib/rapor.js', './lib/olcme.js',
@@ -22,6 +22,14 @@ self.addEventListener('fetch', olay => {
   if (olay.request.method !== 'GET' || new URL(olay.request.url).origin !== adres.origin) return;
   const hedef = olay.request.mode === 'navigate' ? adres.href : olay.request.url;
   if (!varliklar.includes(hedef) || !olay.request.url.startsWith(adres.href)) return;
-  olay.respondWith(caches.open(onbellek).then(async depo =>
-    (await depo.match(hedef)) ?? fetch(olay.request)));
+  // Ağ öncelikli: güncellemeler hemen görünür, bağlantı yoksa son kopya kullanılır.
+  olay.respondWith(caches.open(onbellek).then(async depo => {
+    try {
+      const yanit = await fetch(olay.request);
+      if (yanit.ok) depo.put(hedef, yanit.clone()).catch(() => {});
+      return yanit;
+    } catch {
+      return (await depo.match(hedef)) ?? Response.error();
+    }
+  }));
 });
