@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sokratik bir çalışma oturumu oluştur, çevrimdışı çalış ve öğrenme kazanımını ölç.">
+  <title>Sokratik Ders Çalışma Koçu</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Sokratik Ders Çalışma Koçu</h1>
+      <p>Sorularla kendi çözümünü kur ve çalışmanın ardından ne öğrendiğini ölç.</p>
+    </header>
+
+    <nav aria-label="Çalışma araçları">
+      <div id="sekmeler" role="tablist" aria-label="Çalışma araçları">
+        <button type="button" id="sekme-oturum" role="tab" aria-selected="true" aria-controls="oturum">Oturum kur</button>
+        <button type="button" id="sekme-proje" role="tab" aria-selected="false" aria-controls="proje" tabindex="-1">Kalıcı kullanım</button>
+        <button type="button" id="sekme-olcme" role="tab" aria-selected="false" aria-controls="olcme" tabindex="-1">Kendini sına</button>
+      </div>
+    </nav>
+
+    <section id="oturum" role="tabpanel" aria-labelledby="sekme-oturum">
+      <form id="kurucu">
+        <div class="alanlar">
+          <label class="genis">Ders veya konu
+            <input id="konu" required maxlength="180" placeholder="Örn. Türev ve değişim hızı">
+          </label>
+          <label>Seviye <select id="seviye"></select></label>
+          <label>Çalışma hedefi <select id="hedef"></select></label>
+          <label>Süre <select id="sure"></select></label>
+          <label>Ders alanı şablonu <select id="sablon"></select></label>
+          <p class="genis" id="sablon-bilgi" aria-live="polite" hidden></p>
+          <label class="genis">Ders notu (isteğe bağlı)
+            <textarea id="not" rows="4" maxlength="12000" placeholder="Ders notunu buraya yapıştır."></textarea>
+          </label>
+        </div>
+        <div class="eylemler">
+          <button class="birincil" type="submit" value="plan">Çalışma planı oluştur</button>
+          <button type="submit" value="prompt">Claude’da aç</button>
+        </div>
+      </form>
+      <ol class="yonerge">
+        <li>Oturum bilgilerini doldur ve <strong>Claude’da aç</strong> düğmesine bas.</li>
+        <li>Ücretsiz Claude hesabınla açılan sohbete hazır metni yapıştır. Otomatik kopyalama başarısızsa metni sayfadan elle kopyala.</li>
+        <li>Koçun sorularına tek tek yanıt ver. Süren dolunca koça bildir ve mini quizle oturumu bitir.</li>
+      </ol>
+      <p id="oturum-durum" class="durum" role="status"></p>
+      <div id="prompt-kutu" class="sonuc" hidden>
+        <label>Hazır sohbet metni <textarea id="prompt" rows="8" readonly></textarea></label>
+        <button id="prompt-kopyala" type="button">Metni kopyala</button>
+        <a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">Claude sekmesini aç</a>
+      </div>
+      <section id="plan" class="sonuc" tabindex="-1" hidden></section>
+      <details>
+        <summary>Claude’un yanıtını yapıştır</summary>
+        <p>Mini quizden sonra Claude’dan “JSON raporu” iste. Alıntılar, bu sayfadaki ders notuyla karşılaştırılır.</p>
+        <form id="rapor-form">
+          <label>JSON raporu <textarea id="rapor-metin" rows="5" maxlength="16000" required></textarea></label>
+          <button type="submit">Raporu göster</button>
+        </form>
+        <p id="rapor-durum" class="durum" role="status"></p>
+        <section id="rapor-sonuc" class="sonuc" tabindex="-1" hidden></section>
+      </details>
+    </section>
+
+    <section id="proje" role="tabpanel" aria-labelledby="sekme-proje" hidden>
+      <h2>Claude Projects için koç talimatı</h2>
+      <ol>
+        <li>Claude.ai’de bir Project oluştur.</li>
+        <li>Aşağıdaki metni proje talimatlarına yapıştırıp kaydet.</li>
+        <li>Proje içinde yeni sohbet aç ve çalışacağın konuyu yaz.</li>
+      </ol>
+      <label>Proje talimatı <textarea id="proje-metin" rows="9" readonly></textarea></label>
+      <button id="proje-kopyala" type="button">Talimatı kopyala</button>
+      <p id="proje-durum" class="durum" role="status"></p>
+    </section>
+
+    <section id="olcme" role="tabpanel" aria-labelledby="sekme-olcme" hidden>
+      <h2>Öğrenme kazanımını ölç</h2>
+      <p>Ön testi çöz, aynı konuda bir çalışma oturumu yap, ardından son testi çöz. Açıklamalar son testten sonra görünür.</p>
+      <label>Test konusu <select id="test-konu"></select></label>
+      <label class="onay"><input id="sakla" type="checkbox"> Skorları bu tarayıcıda sakla</label>
+      <div class="eylemler">
+        <button id="sil" type="button">Skorları temizle</button>
+        <button id="teste-basla" class="birincil" type="button">Ön teste başla</button>
+        <button id="konuyla-calis" type="button" hidden>Bu konuyla oturum kur</button>
+      </div>
+      <p id="test-durum" class="durum" role="status"></p>
+      <p id="skor" class="skor" aria-live="polite"></p>
+      <form id="test-form" hidden>
+        <h3 id="test-baslik" tabindex="-1"></h3>
+        <div id="sorular"></div>
+        <button class="birincil" type="submit">Testi bitir</button>
+      </form>
+      <div id="aciklamalar" hidden></div>
+    </section>
+
+    <footer>
+      <p>Bu sayfa girdilerini sunucuya göndermez. Metni Claude’a yapıştırdığında Claude ile paylaşırsın. Skorlar yalnızca izin verirsen tarayıcıya kaydedilir.</p>
+    </footer>
+    <noscript>Çalışma araçlarını kullanmak için JavaScript’i etkinleştir.</noscript>
+  </main>
+</body>
+</html>

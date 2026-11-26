@@ -1,0 +1,208 @@
+{
+  "id": "turev",
+  "konu": "Türev ve değişim hızı",
+  "on": [
+    {
+      "soru": "f(x)=x² için f′(3) kaçtır?",
+      "secenekler": [
+        "3",
+        "6",
+        "9"
+      ],
+      "dogru": 1,
+      "aciklama": "Kuvvet kuralı f′(x)=2x verir."
+    },
+    {
+      "soru": "f(x)=7 için türev nedir?",
+      "secenekler": [
+        "0",
+        "1",
+        "7"
+      ],
+      "dogru": 0,
+      "aciklama": "Sabit fonksiyonun değişim hızı sıfırdır."
+    },
+    {
+      "soru": "f(x)=3x+1 doğrusunun eğimi kaçtır?",
+      "secenekler": [
+        "1",
+        "4",
+        "3"
+      ],
+      "dogru": 2,
+      "aciklama": "x’in katsayısı eğimdir."
+    },
+    {
+      "soru": "Bir noktadaki türev grafikte neyi verir?",
+      "secenekler": [
+        "Teğet eğimini",
+        "Noktanın yüksekliğini",
+        "Eğri altındaki alanı"
+      ],
+      "dogru": 0,
+      "aciklama": "Türev yerel değişim hızıdır ve teğetin eğimidir."
+    },
+    {
+      "soru": "Konum metre, zaman saniye ise konumun zamana göre türevinin birimi nedir?",
+      "secenekler": [
+        "m·s",
+        "m/s",
+        "m/s²"
+      ],
+      "dogru": 1,
+      "aciklama": "Konum değişimi zamana bölünür."
+    },
+    {
+      "soru": "f(1)=2 ve f(4)=8 ise [1,4] aralığında ortalama değişim hızı kaçtır?",
+      "secenekler": [
+        "6",
+        "3",
+        "2"
+      ],
+      "dogru": 2,
+      "aciklama": "(8−2)/(4−1)=2."
+    },
+    {
+      "soru": "Bir fonksiyonun türevi aralık boyunca negatifse fonksiyon ne yapar?",
+      "secenekler": [
+        "Artar",
+        "Azalır",
+        "Sabit kalır"
+      ],
+      "dogru": 1,
+      "aciklama": "Negatif türev aralıkta azalışı gösterir."
+    },
+    {
+      "soru": "f(x)=x³ için f′(2) kaçtır?",
+      "secenekler": [
+        "12",
+        "6",
+        "8"
+      ],
+      "dogru": 0,
+      "aciklama": "f′(x)=3x² olduğundan f′(2)=12."
+    },
+    {
+      "soru": "f(x)=x² için teğetin yatay olduğu x değeri nedir?",
+      "secenekler": [
+        "2",
+        "1",
+        "0"
+      ],
+      "dogru": 2,
+      "aciklama": "Yatay teğet için 2x=0 olmalıdır."
+    },
+    {
+      "soru": "f(x)=abs(x) fonksiyonunun x=0 noktasında türevi neden yoktur?",
+      "secenekler": [
+        "Değeri sıfır olduğundan",
+        "Sağ ve sol eğim farklı olduğundan",
+        "Grafiği sürekli olduğundan"
+      ],
+      "dogru": 1,
+      "aciklama": "Sol eğim −1, sağ eğim 1’dir."
+    }
+  ],
+  "son": [
+    {
+      "soru": "g(x)=x² için g′(4) kaçtır?",
+      "secenekler": [
+        "8",
+        "16",
+        "4"
+      ],
+      "dogru": 0,
+      "aciklama": "g′(x)=2x olduğundan g′(4)=8."
+    },
+    {
+      "soru": "g(x)=−5 için türev nedir?",
+      "secenekler": [
+        "−5",
+        "−1",
+        "0"
+      ],
+      "dogru": 2,
+      "aciklama": "Fonksiyon sabit olduğundan değişim hızı sıfırdır."
+    },
+    {
+      "soru": "g(x)=−2x+5 doğrusunun eğimi kaçtır?",
+      "secenekler": [
+        "5",
+        "−2",
+        "3"
+      ],
+      "dogru": 1,
+      "aciklama": "Eğim x’in katsayısıdır."
+    },
+    {
+      "soru": "Bir grafikte bir noktadaki anlık değişim hızını hangi doğru temsil eder?",
+      "secenekler": [
+        "Y ekseni",
+        "İki ayrı noktadan geçen kesen",
+        "O noktadaki teğet"
+      ],
+      "dogru": 2,
+      "aciklama": "Teğetin eğimi anlık değişim hızıdır."
+    },
+    {
+      "soru": "Hacim litre, zaman dakika ise hacmin zamana göre türevinin birimi nedir?",
+      "secenekler": [
+        "L/dk",
+        "L·dk",
+        "dk/L"
+      ],
+      "dogru": 0,
+      "aciklama": "Hacim değişimi zamana bölünür."
+    },
+    {
+      "soru": "g(2)=3 ve g(5)=12 ise [2,5] aralığında ortalama değişim hızı kaçtır?",
+      "secenekler": [
+        "9",
+        "3",
+        "4"
+      ],
+      "dogru": 1,
+      "aciklama": "(12−3)/(5−2)=3."
+    },
+    {
+      "soru": "Bir fonksiyonun türevi aralık boyunca pozitifse fonksiyon ne yapar?",
+      "secenekler": [
+        "Sabit kalır",
+        "Azalır",
+        "Artar"
+      ],
+      "dogru": 2,
+      "aciklama": "Pozitif türev aralıkta artışı gösterir."
+    },
+    {
+      "soru": "g(x)=x³ için g′(3) kaçtır?",
+      "secenekler": [
+        "27",
+        "9",
+        "81"
+      ],
+      "dogru": 0,
+      "aciklama": "g′(x)=3x² olduğundan g′(3)=27."
+    },
+    {
+      "soru": "g(x)=(x−2)² için teğetin yatay olduğu x değeri nedir?",
+      "secenekler": [
+        "0",
+        "2",
+        "4"
+      ],
+      "dogru": 1,
+      "aciklama": "Yatay teğet için 2(x−2)=0 olmalıdır."
+    },
+    {
+      "soru": "g(x)=abs(x−1) fonksiyonunun x=1 noktasında türevi neden yoktur?",
+      "secenekler": [
+        "Fonksiyon tanımsız olduğundan",
+        "Değeri sıfır olduğundan",
+        "Tek yönlü eğimler eşit olmadığından"
+      ],
+      "dogru": 2,
+      "aciklama": "Sol eğim −1, sağ eğim 1 olduğundan ortak limit yoktur."
+    }
+  ]
+}

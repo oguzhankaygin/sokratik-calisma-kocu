@@ -1,0 +1,208 @@
+{
+  "id": "veri-yapilari",
+  "konu": "Temel veri yapıları",
+  "on": [
+    {
+      "soru": "Bir yığına sırayla A ve B ekleniyor. İlk çıkarılan hangisi?",
+      "secenekler": [
+        "A",
+        "B",
+        "İkisi birlikte"
+      ],
+      "dogru": 1,
+      "aciklama": "Yığında son giren ilk çıkar."
+    },
+    {
+      "soru": "Bir kuyruğa sırayla A ve B ekleniyor. İlk çıkarılan hangisi?",
+      "secenekler": [
+        "A",
+        "B",
+        "İkisi birlikte"
+      ],
+      "dogru": 0,
+      "aciklama": "Kuyrukta ilk giren ilk çıkar."
+    },
+    {
+      "soru": "Sabit boyutlu bir dizide bilinen bir indeksteki öğeye erişim maliyeti nedir?",
+      "secenekler": [
+        "O(n)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "dogru": 2,
+      "aciklama": "Adres indeks ve öğe boyutundan doğrudan hesaplanır."
+    },
+    {
+      "soru": "Tek yönlü bağlı listenin sonundaki öğeye, yalnızca baş düğüm biliniyorsa erişim maliyeti nedir?",
+      "secenekler": [
+        "O(1)",
+        "O(n)",
+        "O(log n)"
+      ],
+      "dogru": 1,
+      "aciklama": "Bağlantılar baştan sona sırayla izlenir."
+    },
+    {
+      "soru": "Metin düzenleyicide son işlemi geri almak için hangi yapı doğaldır?",
+      "secenekler": [
+        "Yığın",
+        "Kuyruk",
+        "Sıralı ağaç"
+      ],
+      "dogru": 0,
+      "aciklama": "Son eklenen işlemi önce geri almak gerekir."
+    },
+    {
+      "soru": "Eşit öncelikteki baskı işleri geliş sırasıyla tamamlanacaksa hangi yapı uygundur?",
+      "secenekler": [
+        "Yığın",
+        "Küme",
+        "Kuyruk"
+      ],
+      "dogru": 2,
+      "aciklama": "Kuyruk işleri geliş sırasıyla verir."
+    },
+    {
+      "soru": "Tek yönlü listenin başına ekleme, baş düğüm biliniyorsa ne kadar sürer?",
+      "secenekler": [
+        "O(n)",
+        "O(1)",
+        "O(log n)"
+      ],
+      "dogru": 1,
+      "aciklama": "Yeni düğüm eski başa bağlanır ve baş güncellenir."
+    },
+    {
+      "soru": "Bir dizinin başına eklerken mevcut n öğeyi sağa kaydırmak gerekirse maliyet nedir?",
+      "secenekler": [
+        "O(n)",
+        "O(1)",
+        "O(log n)"
+      ],
+      "dogru": 0,
+      "aciklama": "Her öğe bir kez taşınır."
+    },
+    {
+      "soru": "Bir yığından çıkarma işlemi hangi ucu kullanır?",
+      "secenekler": [
+        "Herhangi bir konumu",
+        "Tabanı",
+        "Tepeyi"
+      ],
+      "dogru": 2,
+      "aciklama": "Çıkarma erişilebilir en son eklenen öğeden yapılır."
+    },
+    {
+      "soru": "Kuyrukta X ve Y bu sırayla bekliyor. X çıkıyor, Z ekleniyor. Sıradaki öğe hangisi?",
+      "secenekler": [
+        "Z",
+        "Y",
+        "X"
+      ],
+      "dogru": 1,
+      "aciklama": "Y, Z’den önce eklenmiştir."
+    }
+  ],
+  "son": [
+    {
+      "soru": "Bir yığına sırayla 1, 2 ve 3 ekleniyor. İlk çıkarılan hangisi?",
+      "secenekler": [
+        "1",
+        "2",
+        "3"
+      ],
+      "dogru": 2,
+      "aciklama": "Yığında en son eklenen 3 önce çıkar."
+    },
+    {
+      "soru": "Bir kuyruğa sırayla 3, 2 ve 1 ekleniyor. İlk çıkarılan hangisi?",
+      "secenekler": [
+        "3",
+        "2",
+        "1"
+      ],
+      "dogru": 0,
+      "aciklama": "Kuyrukta en önce eklenen 3 çıkar."
+    },
+    {
+      "soru": "Bellekte bitişik tutulan bir dizide 20. konuma doğrudan erişim ne kadar sürer?",
+      "secenekler": [
+        "O(n)",
+        "O(1)",
+        "O(log n)"
+      ],
+      "dogru": 1,
+      "aciklama": "Konum bellek adresine doğrudan çevrilebilir."
+    },
+    {
+      "soru": "Tek yönlü bağlı listede yalnızca ilk düğüm biliniyor. Son düğüme ulaşmak için en kötü durumda kaç düğüm gezinilir?",
+      "secenekler": [
+        "Sabit sayıda",
+        "Yaklaşık log n",
+        "n kadar"
+      ],
+      "dogru": 2,
+      "aciklama": "Herhangi bir kısayol olmadığından listenin tamamı gezilir."
+    },
+    {
+      "soru": "En son açılan parantezi önce kapatmayı hangi yapı kolaylaştırır?",
+      "secenekler": [
+        "Yığın",
+        "Kuyruk",
+        "Küme"
+      ],
+      "dogru": 0,
+      "aciklama": "Kapanan parantez en son açılanla eşleşir."
+    },
+    {
+      "soru": "Destek istekleri geliş sırasıyla ele alınacaksa hangi yapı uygundur?",
+      "secenekler": [
+        "Yığın",
+        "Kuyruk",
+        "Küme"
+      ],
+      "dogru": 1,
+      "aciklama": "Kuyruk en erken gelen isteği önce verir."
+    },
+    {
+      "soru": "Bir tek yönlü bağlı listenin başı biliniyor. Başa düğüm eklemek için kaç bağlantı güncellemesi gerekir?",
+      "secenekler": [
+        "n kadar",
+        "log n kadar",
+        "Sabit sayıda"
+      ],
+      "dogru": 2,
+      "aciklama": "Yeni düğümün bağlantısı ve baş işaretçisi güncellenir."
+    },
+    {
+      "soru": "Bir diziye sıfırıncı indeksten öğe eklenirken tüm mevcut öğeler kaydırılırsa işlem ne kadar sürer?",
+      "secenekler": [
+        "O(1)",
+        "O(n)",
+        "O(log n)"
+      ],
+      "dogru": 1,
+      "aciklama": "n öğenin her biri bir konum kaydırılır."
+    },
+    {
+      "soru": "Yığına yeni öğe eklendiğinde hangi konuma gelir?",
+      "secenekler": [
+        "Tepeye",
+        "Tabana",
+        "Ortaya"
+      ],
+      "dogru": 0,
+      "aciklama": "Bir sonraki çıkarma işlemi yeni öğeyi seçer."
+    },
+    {
+      "soru": "Kuyrukta K ve L bu sırayla bekliyor. K çıkıyor, M ekleniyor. Sıradaki öğe hangisi?",
+      "secenekler": [
+        "M",
+        "K",
+        "L"
+      ],
+      "dogru": 2,
+      "aciklama": "L, M’den daha önce gelmiştir."
+    }
+  ]
+}
