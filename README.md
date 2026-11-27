@@ -4,6 +4,8 @@
 
 [Tarayıcıda kullan](https://oguzhankaygin.github.io/sokratik-calisma-kocu/)
 
+Telefonda tarayıcı menüsündeki **Ana ekrana ekle** (iPhone’da Paylaş → Ana Ekrana Ekle) seçeneğiyle uygulama gibi açabilirsin; bir kez açıldıktan sonra internetsiz de çalışır.
+
 ## Nasıl çalışır?
 
 1. **Çevrimdışı çalışma planı.** Konu, seviye, hedef ve süreyi gir. Uygulama çalışma ve mola bloklarını, hedefe göre kendine soracağın soruları ve Feynman adımlarını üretir. İnternete bağlı ilk ziyarette statik dosyalar önbelleğe alındıktan sonra sayfa ve testler çevrimdışı yeniden açılabilir.

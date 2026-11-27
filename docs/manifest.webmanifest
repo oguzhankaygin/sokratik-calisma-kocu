@@ -1,0 +1,38 @@
+{
+  "name": "Sokratik Ders Çalışma Koçu",
+  "short_name": "Sokratik Koç",
+  "description": "Sokratik bir çalışma oturumu oluştur, çevrimdışı çalış ve öğrenme kazanımını ölç.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef3f2",
+  "theme_color": "#005a50",
+  "icons": [
+    {
+      "src": "ikon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "ikon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "ikon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "ikon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 const adres = new URL(self.registration.scope);
 const onEk = `sokratik-koc:${adres.pathname}:`;
-const onbellek = `${onEk}v2`;
+const onbellek = `${onEk}v3`;
 const varliklar = [
   './', './index.html', './style.css', './app.js',
   './lib/koc.js', './lib/sablonlar.js', './lib/rapor.js', './lib/olcme.js',
   './degerlendirme/turev.json', './degerlendirme/veri-yapilari.json',
+  './manifest.webmanifest', './ikon.svg', './ikon-192.png', './ikon-512.png',
 ].map(yol => new URL(yol, adres).href);
 
 self.addEventListener('install', olay => {
